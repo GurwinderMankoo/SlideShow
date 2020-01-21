@@ -1,2 +1,0 @@
-# SlideShow
-Created with CodeSandbox
