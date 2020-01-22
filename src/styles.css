@@ -29,8 +29,10 @@
 }
 .img-container {
   display: flex;
-  transition: all 0.5s ease-in;
   z-index: -1;
+}
+.applytransition {
+  transition: all 0.5s ease-in;
 }
 .slider img {
   width: 100%;
