@@ -18,20 +18,25 @@ const images = [
 ];
 export default function App() {
   const [currentPosition, setCurrentPosition] = useState(0);
+  const [trans, setTrans] = useState(true);
 
   const leftImageHandler = () => {
     if (currentPosition >= 0) {
       setCurrentPosition((images.length - 1) * -100);
+      setTrans(false);
     } else {
       setCurrentPosition(currentPosition + 100);
+      setTrans(true);
     }
   };
 
   const rightImageHandler = () => {
     if (currentPosition <= (images.length - 1) * -100) {
       setCurrentPosition(0);
+      setTrans(false);
     } else {
       setCurrentPosition(currentPosition - 100);
+      setTrans(true);
     }
   };
 
@@ -44,7 +49,7 @@ export default function App() {
       <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2>
       <div className="container">
-        <Slider images={images} currentImage={currentPosition} />
+        <Slider images={images} currentImage={currentPosition} slide={trans} />
         <LeftArrow left={leftImageHandler} />
         <RightArrow right={rightImageHandler} />
         <Dots
