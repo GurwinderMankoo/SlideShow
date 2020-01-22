@@ -10,7 +10,7 @@ const Dots = ({ slideCount, currentActive, goTo }) => {
             className={currentActive === i * -100 ? "active" : null}
             onClick={() => goTo(i)}
           >
-            {i}
+            {i+1}
           </li>
         );
       })}
