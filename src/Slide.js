@@ -7,9 +7,12 @@ const Slider = props => {
 
   return (
     <div className="slider">
-      <div className="img-container" style={customStyle}>
+      <div
+        className={`img-container ${props.slide ? "applytransition" : null}`}
+        style={customStyle}
+      >
         {props.images.map((img, i) => {
-          return <img src={img} alt="image" key={i} />;
+          return <img src={img} alt="img" key={i} />;
         })}
       </div>
     </div>
